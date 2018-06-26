@@ -61,3 +61,14 @@ char *parseStreamLine(FILE *file) {
     }
     return string;
 }
+
+void fileOpenning (FILE *file, char *arg, char *nextArg, char *flag, char *key) {
+    if (strcmp(arg, flag) == 0) {
+        file = fopen(nextArg, key);
+        if (file == NULL) {
+            printf("Cannot get file %s\n", nextArg);
+            printf("\nProcess finished with exit code %d\n", 23);
+            exit(23);
+        }
+    }
+}

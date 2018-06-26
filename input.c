@@ -21,38 +21,10 @@ int main(int argc, char *argv[]) {
     int flag;
 
     for (int i = 1; i < 8; i++) {
-        if (strcmp(argv[i], "-a") == 0) {
-            alphabet = fopen(argv[i + 1], "rt");
-            if (alphabet == NULL) {
-                printf("Cannot get file %s\n", argv[i + 1]);
-                printf("\nProcess finished with exit code %d\n", 23);
-                exit(23);
-            }
-        }
-        if (strcmp(argv[i], "-i") == 0) {
-            inputTape = fopen(argv[i + 1], "rt");
-            if (inputTape == NULL) {
-                printf("Cannot get file %s\n", argv[i + 1]);
-                printf("\nProcess finished with exit code %d\n", 23);
-                exit(23);
-            }
-        }
-        if (strcmp(argv[i], "-q") == 0) {
-            machine = fopen(argv[i + 1], "rt");
-            if (machine == NULL) {
-                printf("Cannot get file %s\n", argv[i + 1]);
-                printf("\nProcess finished with exit code %d\n", 23);
-                exit(23);
-            }
-        }
-        if (strcmp(argv[i], "-o") == 0) {
-            output = fopen(argv[i + 1], "wt");
-            if (output == NULL) {
-                printf("Cannot get file %s\n", argv[i + 1]);
-                printf("\nProcess finished with exit code %d\n", 23);
-                exit(23);
-            }
-        }
+        fileOpenning(alphabet, argv[i], argv[i + 1], "-a", "rt");
+        fileOpenning(inputTape, argv[i], argv[i + 1], "-i", "rt");
+        fileOpenning(machine, argv[i], argv[i + 1], "-q", "rt");
+        fileOpenning(output, argv[i], argv[i + 1], "-a", "wt");
     }
     if ((alphabet == NULL) || (inputTape == NULL) || (machine == NULL) || (output == NULL)) {
         printf("Wrong format of command line launch\n");

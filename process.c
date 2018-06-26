@@ -53,7 +53,7 @@ int process(char *alphabet, int headPos, char *tape, int *states, int statesNumb
             exit(21);
         }
         if (headPos == tapeLength - 1) {
-            tapeLength++;
+            tapeLength += 10;
             tape = (char *) realloc(tape, tapeLength * sizeof(char));
             if (tape == NULL) {
                 printf("Memory allocation error\n");

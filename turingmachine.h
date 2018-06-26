@@ -16,6 +16,8 @@ int process(char *alphabet, int headPos, char *tape, int *states, int statesNumb
 
 int start(FILE *inputTape, FILE *alphabet, FILE *machine, FILE *output, int flag);
 
+void fileOpenning (FILE *file, char *arg, char *nextArg, char *flag, char *key);
+
 int isNumber(char ch);
 
 int pow(int x, int y);
